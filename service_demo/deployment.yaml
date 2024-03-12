@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-deployment
+  labels:
+    app: my-apache
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-apache
+  template:
+    metadata:
+      labels:
+        app: my-apache
+    spec:
+      containers:
+      - name: apache
+        image: eugeneting/example-httpd:v0.2
+        ports:
+        - containerPort: 80
+        
