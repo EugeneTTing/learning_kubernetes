@@ -10,7 +10,7 @@ Services can be used to solve this porblem. Services are used to expose network 
 
 Several types of Services with different network visibility and functionality can be defined based on your needs. The default Service type is ClusterIP, which is only visisble within the cluster. This will be the type of Service used within this demonstration.
 
-## Demonstration Instructions
+## Demo Instructions
 
 Deploy the Kubernetes resources:
 
