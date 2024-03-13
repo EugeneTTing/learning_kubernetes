@@ -23,6 +23,7 @@ Otherwise, `kubectl` may be pointing to another context. You can get the availab
 ## Demonstations
 
 [Services](./service_demo/README.MD)
+[Ingress](./ingress_demo/README.MD)
 
 ## About Me
 
