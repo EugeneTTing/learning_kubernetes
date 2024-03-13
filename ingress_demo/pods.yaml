@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: root-pod
+  labels:
+    url: root
+spec:
+  containers:
+  - name: httpd
+    image: httpd:2.4-alpine
+    ports:
+    - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod
+  labels:
+    url: hello
+spec:
+  containers:
+  - name: hello-httpd
+    image: httpd:2.4-alpine
+    command: ['sh', '-c', 'mkdir /usr/local/apache2/htdocs/hello/; echo "<html><body><h1>Hello, Kubernetes!</h1></body></html>" > /usr/local/apache2/htdocs/hello/index.html; httpd -D FOREGROUND;']
+    ports:
+    - containerPort: 80
